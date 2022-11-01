@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 
 
 
-const Navbar = ({accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
+const Navbar = ({screen ,accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
   const [navState, setNavState] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const connectAccount = async () => {

@@ -11,11 +11,19 @@ import {
 } from "./components";
 import { useEffect, useState } from "react";
 import scrollreveal from "scrollreveal";
+import NftList from "./components/NftList";
 
 function App() {
   const [theme, setTheme] = useState("dark");
   const [accounts , setAccounts] = useState([]);
   const [isConnected , setIsConnected] = useState(false);
+  const Screans = {
+        Landing: "Landing",
+        MyNfts: "MyNfts",
+        MyProfil: "MyProfil"
+    }
+
+    const screen = Screans.Landing;
 
   const changeTheme = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark");
@@ -51,12 +59,16 @@ function App() {
   return (
       <div className="App" data-theme={theme}>
         <ScrollToTop />
-        <Navbar    accounts={accounts} setAccounts={setAccounts}  isConnected ={isConnected} setIsConnected={setIsConnected} changeTheme={changeTheme} currentTheme={theme} />
-        <Home />
-        <SuperRare accounts={accounts} setAccounts={setAccounts} isConnected ={isConnected}  />
-        <Free />
-        <Clients />
-        <Signup />
+          <Navbar screen={screen}   accounts={accounts} setAccounts={setAccounts}  isConnected ={isConnected} setIsConnected={setIsConnected} changeTheme={changeTheme} currentTheme={theme} />
+
+              <div>
+                  { isConnected ? <NftList accounts={accounts} setAccounts={setAccounts} isConnected ={isConnected}   /> : <div/>}
+                  <Home />
+                  <SuperRare accounts={accounts} setAccounts={setAccounts} isConnected ={isConnected}  />
+                  <Free />
+                  <Clients />
+                  <Signup />
+              </div>
         <Footer />
       </div>
   );

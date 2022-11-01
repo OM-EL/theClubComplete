@@ -48,7 +48,7 @@ const SuperRare = ( {accounts , setAccounts , isConnected }) => {
       </div>
       <div className="cards">
         {superRareData.map((item, index) => (
-            <div >
+            <div className="cardButton" >
 
 
             <Card
@@ -60,9 +60,11 @@ const SuperRare = ( {accounts , setAccounts , isConnected }) => {
             time={item.time}
             key={index}
           />
+                <br/>
+                <br/>
                { isConnected ?
                    <button className="button" onClick={() => handleMint()} >Mint {item.title} </button>
-                   : <button onClick={() => handleMint()} >Mint {item.title} </button>
+                   : <button className="button" onClick={() => handleMint()} >Mint {item.title} </button>
                 }
             </div>
 
