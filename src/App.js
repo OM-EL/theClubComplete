@@ -18,7 +18,6 @@ function App() {
   const [isConnected , setIsConnected] = useState(false);
 
   const changeTheme = () => {
-      console.log(theme);
     theme === "dark" ? setTheme("light") : setTheme("dark");
   };
 
@@ -39,6 +38,8 @@ function App() {
     registerAnimations();
   }, []);
 
+
+
   window.setTimeout(() => {
     const home = document.getElementsByClassName("home");
     home[0].style.transform = "none";
@@ -52,7 +53,7 @@ function App() {
         <ScrollToTop />
         <Navbar    accounts={accounts} setAccounts={setAccounts}  isConnected ={isConnected} setIsConnected={setIsConnected} changeTheme={changeTheme} currentTheme={theme} />
         <Home />
-        <SuperRare accounts={accounts} setAccounts={setAccounts} />
+        <SuperRare accounts={accounts} setAccounts={setAccounts} isConnected ={isConnected}  />
         <Free />
         <Clients />
         <Signup />

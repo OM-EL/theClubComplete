@@ -4,50 +4,26 @@ import { MdClose } from "react-icons/md";
 import { ImSun } from "react-icons/im";
 import { BsFillMoonFill } from "react-icons/bs";
 import logo from "../assets/logo.png";
-import {ethers} from "ethers";
 
 
 
 const Navbar = ({accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
   const [navState, setNavState] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
-  async function connectAccount() {
-
-    const walletResponse = await connectWallet();
-
-  }
-
-  async function requestAccount() {
-    console.log('Requesting account...');
-
-    // ❌ Check if Meta Mask Extension exists
+  const connectAccount = async () => {
+    if(isConnected) {
+      setIsConnected(false);
+      setAccounts([]);
+      return;
+    }
     if(window.ethereum) {
-      console.log('detected');
-
-      try {
-        const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
-        setWalletAddress(accounts[0]);
-      } catch (error) {
-        console.log('Error connecting...');
-      }
-
-    } else {
-      alert('Meta Mask not detected');
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setIsConnected(true);
+      setAccounts(accounts);
     }
   }
-
-
-  async function connectWallet() {
-    if(typeof window.ethereum !== 'undefined') {
-      await requestAccount();
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-    }
-  }
-
-
 
 
   return (
@@ -90,12 +66,20 @@ const Navbar = ({accounts, setAccounts, changeTheme, currentTheme, isConnected, 
               Contact
             </a>
           </li>
-          <li>
             {
-              !isConnected ? <a onClick={requestAccount}> Connect </a>
-                  : <a onClick={ () => connectAccount()}> Disconnect </a>
+              isConnected ? (
+                  <div>
+                    <li>
+                      <a onClick={connectAccount}> Disconnect </a>
+                    </li>
+                  </div>)
+                  :
+                  ( <li>
+                    <a onClick={connectAccount}> Connect </a>
+                  </li>)
+
             }
-          </li>
+
           <li onClick={changeTheme}>
             {currentTheme === "dark" ? (
               <ImSun className="light" />

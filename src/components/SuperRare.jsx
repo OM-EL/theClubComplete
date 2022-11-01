@@ -1,36 +1,41 @@
 import React, {useState} from "react";
 import { superRareData } from "../data";
 import Card from "./Card";
-import TheClubMembership from '../assets/TheClubMembership.json'
 import {BigNumber, ethers} from "ethers";
+import theClubMembership from '../assets/TheClubMembership.json';
 
 
  const mintMembershipCart = (plan) => {
      console.log("Minting " + plan );
 }
-const TheClubMembershipAddress = "0x7d471EAfFB35A0457Cc7e1848d04EA514E7EE9e5";
+const TheClubMembershipAddress = "0x9FFAa549Cde064E4e75fE52a609264B8C8600C63";
 
-
-async function handleMint() {
+const handleMint = async () => {
     if(window.ethereum) {
-        const provider = new ethers.providers.AlchemyWebSocketProvider(80001 , "kwfqNgqlwbwESMhd0GTlt3sXvi6O3SIu" );
-        await provider.send('eth_accounts', []);
+        const provider = new ethers.providers.Web3Provider( window.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
             TheClubMembershipAddress,
-            TheClubMembership.abi,
+            theClubMembership.abi,
             signer
-        );
+        )
         try{
-            const response = await contract.mint(BigNumber.from(1));
-            console.log('response: ' , response);
+            console.log(provider.getBalance(TheClubMembershipAddress));
+            const response = await contract.mint(
+                BigNumber.from(1), {
+                    value: ethers.utils.parseEther((0.00002 * 1 ).toString())
+                }
+            );
+            console.log('response ' , response );
         } catch (err) {
-            console.log("error: " , err);
+            console.log("error: ", err);
         }
     }
 }
 
-const SuperRare = ( {accounts , setAccounts}) => {
+
+
+const SuperRare = ( {accounts , setAccounts , isConnected }) => {
 
   return (
     <div className="super-rare" id="super-rare">
@@ -55,9 +60,10 @@ const SuperRare = ( {accounts , setAccounts}) => {
             time={item.time}
             key={index}
           />
-               isConnected ? {
-                    <button className="brand-container" onClick={() => handleMint()} >Mint {item.title} </button>
-                } :
+               { isConnected ?
+                   <button className="button" onClick={() => handleMint()} >Mint {item.title} </button>
+                   : <button onClick={() => handleMint()} >Mint {item.title} </button>
+                }
             </div>
 
         ))}
