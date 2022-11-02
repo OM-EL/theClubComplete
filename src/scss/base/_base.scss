@@ -39,7 +39,11 @@ html {
   overflow-x: hidden;
   transition: 0.5s ease-in-out;
   padding: 2rem 4rem;
+  .h3{
+    color: var(--accent-color1);
+  }
 }
+
 
 ::-webkit-scrollbar {
   background-color: var(--background);
@@ -49,6 +53,7 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: var(--orange);
 }
+
 
 @media (max-width: 575.98px) {
   .App {

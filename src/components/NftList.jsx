@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Card from "./Card";
 import {Alchemy, Network} from "alchemy-sdk";
+import  "../scss/sections/_nftList.scss"
 
 const config = {
     apiKey: "kwfqNgqlwbwESMhd0GTlt3sXvi6O3SIu",
@@ -43,8 +44,9 @@ function NftList({accounts , setAccounts , isConnected }) {
                             <div className="cardButton" >
                                 <Card
                                     image={item.media[0].gateway}
-                                    title={item.media.gateway}
-                                    key={item.media.gateway}
+                                    title={item.rawMetadata.description}
+                                    key={item.rawMetadata.name}
+                                    tag={item.tokenId}
                                 />
                                 <div>{item.media.gateway}</div>
                             </div>
@@ -52,7 +54,10 @@ function NftList({accounts , setAccounts , isConnected }) {
                         ))}
                     </div>
 
-                    : <div className="title" > Loading </div>
+                    :
+                    <div className="loader-container">
+                        <div className="spinner"></div>
+                    </div>
             }
         </div>
     );

@@ -4,10 +4,11 @@ import { MdClose } from "react-icons/md";
 import { ImSun } from "react-icons/im";
 import { BsFillMoonFill } from "react-icons/bs";
 import logo from "../assets/logo.png";
+import {Screans} from "../App";
 
 
 
-const Navbar = ({screen ,accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
+const Navbar = ({screen , setScreend,accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
   const [navState, setNavState] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const connectAccount = async () => {
@@ -22,6 +23,47 @@ const Navbar = ({screen ,accounts, setAccounts, changeTheme, currentTheme, isCon
       });
       setIsConnected(true);
       setAccounts(accounts);
+    }
+  }
+
+  function tabsOnScreen()
+  {
+    if(screen == Screans.Landing) {
+      return <ul className="links">
+              <li>
+                <a href="#freebies" onClick={() => setScreend(Screans.QR)}>
+                  Enter the club
+                </a>
+              </li>
+              <li>
+                <a href="#super-rare" onClick={() => setScreend(Screans.Landing)}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#super-rare" onClick={() => setScreend(Screans.MyNfts)}>
+                  My Cards
+                </a>
+              </li>
+              <li>
+                <a href="#footer" onClick={() => setNavState(false)}>
+                  Contact
+                </a>
+              </li>
+           </ul>
+    }
+
+    if(screen == Screans.MyNfts || screen == Screans.QR )
+    {
+     return <ul className="links">
+       <li>
+         <a href="#super-rare" onClick={() => setScreend(Screans.Landing)}>
+           Home
+         </a>
+       </li>
+     </ul>
+
+
     }
   }
 
@@ -51,21 +93,9 @@ const Navbar = ({screen ,accounts, setAccounts, changeTheme, currentTheme, isCon
       </div>
       <div className={`links-container ${navState ? "nav-visible" : ""}`}>
         <ul className="links">
-          <li>
-            <a href="#freebies" onClick={() => setNavState(false)}>
-              Freebies
-            </a>
-          </li>
-          <li>
-            <a href="#super-rare" onClick={() => setNavState(false)}>
-              Super Rare Auctions
-            </a>
-          </li>
-          <li>
-            <a href="#footer" onClick={() => setNavState(false)}>
-              Contact
-            </a>
-          </li>
+          {
+            tabsOnScreen()
+          }
             {
               isConnected ? (
                   <div>
