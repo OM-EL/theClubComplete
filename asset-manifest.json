@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/react-nft-landing-page/static/css/main.ad85da7a.css",
-    "main.js": "/react-nft-landing-page/static/js/main.7eee4d24.js",
-    "static/js/584.815aa9c5.chunk.js": "/react-nft-landing-page/static/js/584.815aa9c5.chunk.js",
-    "static/js/429.2fa5485b.chunk.js": "/react-nft-landing-page/static/js/429.2fa5485b.chunk.js",
-    "static/media/release2.png": "/react-nft-landing-page/static/media/release2.57dbca1de73e04a76a8f.png",
-    "static/media/super1.png": "/react-nft-landing-page/static/media/super1.99d9c3807e2497095e76.png",
-    "static/media/closeD.png": "/react-nft-landing-page/static/media/closeD.a6e08098fe95a7c250dc.png",
-    "static/media/super3.png": "/react-nft-landing-page/static/media/super3.339116d9e89e62c95a1b.png",
-    "static/media/openD.png": "/react-nft-landing-page/static/media/openD.4175ba529effc4ac23b3.png",
-    "static/media/mintNFT.png": "/react-nft-landing-page/static/media/mintNFT.8ac06400a0fa24cb32e2.png",
-    "static/media/door.png": "/react-nft-landing-page/static/media/door.3c95ab833e39786c4189.png",
-    "static/media/beu.png": "/react-nft-landing-page/static/media/beu.57c1d339c8216e23adcd.png",
-    "static/media/super2.png": "/react-nft-landing-page/static/media/super2.58525cfd3c3452e84153.png",
-    "static/media/home.png": "/react-nft-landing-page/static/media/home.86a94e37ccb03cb34b67.png",
-    "index.html": "/react-nft-landing-page/index.html",
-    "main.ad85da7a.css.map": "/react-nft-landing-page/static/css/main.ad85da7a.css.map",
-    "main.7eee4d24.js.map": "/react-nft-landing-page/static/js/main.7eee4d24.js.map",
-    "584.815aa9c5.chunk.js.map": "/react-nft-landing-page/static/js/584.815aa9c5.chunk.js.map",
-    "429.2fa5485b.chunk.js.map": "/react-nft-landing-page/static/js/429.2fa5485b.chunk.js.map"
+    "main.css": "/static/css/main.ad85da7a.css",
+    "main.js": "/static/js/main.ce0bbc56.js",
+    "static/js/584.f9b702a9.chunk.js": "/static/js/584.f9b702a9.chunk.js",
+    "static/js/429.98689890.chunk.js": "/static/js/429.98689890.chunk.js",
+    "static/media/release2.png": "/static/media/release2.57dbca1de73e04a76a8f.png",
+    "static/media/super1.png": "/static/media/super1.99d9c3807e2497095e76.png",
+    "static/media/closeD.png": "/static/media/closeD.a6e08098fe95a7c250dc.png",
+    "static/media/super3.png": "/static/media/super3.339116d9e89e62c95a1b.png",
+    "static/media/openD.png": "/static/media/openD.4175ba529effc4ac23b3.png",
+    "static/media/mintNFT.png": "/static/media/mintNFT.8ac06400a0fa24cb32e2.png",
+    "static/media/door.png": "/static/media/door.3c95ab833e39786c4189.png",
+    "static/media/beu.png": "/static/media/beu.57c1d339c8216e23adcd.png",
+    "static/media/super2.png": "/static/media/super2.58525cfd3c3452e84153.png",
+    "static/media/home.png": "/static/media/home.86a94e37ccb03cb34b67.png",
+    "index.html": "/index.html",
+    "main.ad85da7a.css.map": "/static/css/main.ad85da7a.css.map",
+    "main.ce0bbc56.js.map": "/static/js/main.ce0bbc56.js.map",
+    "584.f9b702a9.chunk.js.map": "/static/js/584.f9b702a9.chunk.js.map",
+    "429.98689890.chunk.js.map": "/static/js/429.98689890.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad85da7a.css",
-    "static/js/main.7eee4d24.js"
+    "static/js/main.ce0bbc56.js"
   ]
 }
