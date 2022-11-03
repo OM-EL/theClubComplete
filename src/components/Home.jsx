@@ -1,7 +1,5 @@
 import React from "react";
 import home from "../assets/home.png";
-import {exampleCardsCategories, superRareData} from "../data";
-import Card from "./Card";
 
 const Home = () => {
   return (
