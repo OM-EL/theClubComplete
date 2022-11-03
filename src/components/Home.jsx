@@ -14,7 +14,7 @@ const Home = () => {
             Don't miss out on the release of our new NFT. Sign up below to
             receive updates when we go live.
           </p>
-          <button href="#super-rare" >Mint now</button>
+          <button href="#super-rare" >Mint one of the NFT below </button>
         </div>
         <div className="right">
           <div className="image" >
