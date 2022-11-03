@@ -19,7 +19,6 @@ function Benefits({accounts , setAccounts , isConnected }) {
     const hasTheClubNFT = async () => {
         let canEnter = await alchemy.nft.getNftsForOwner(accounts[0]);
         canEnter = canEnter.totalCount > 0;
-        console.log(canEnter);
         return canEnter ;
     };
     function renderCanOpen( ) {

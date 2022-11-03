@@ -24,7 +24,6 @@ function NftList({accounts , setAccounts , isConnected }) {
         getNFTList().then((response) => {
 
             nfts = response.ownedNfts;
-            console.log(nfts);
             setIsNFTLoaded(true);
 
         });

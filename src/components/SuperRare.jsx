@@ -4,10 +4,6 @@ import Card from "./Card";
 import {BigNumber, ethers} from "ethers";
 import theClubMembership from '../assets/TheClubMembership.json';
 
-
- const mintMembershipCart = (plan) => {
-     console.log("Minting " + plan );
-}
 const TheClubMembershipAddress = "0x9FFAa549Cde064E4e75fE52a609264B8C8600C63";
 
 const handleMint = async () => {
@@ -26,7 +22,6 @@ const handleMint = async () => {
                     value: ethers.utils.parseEther((0.00002 * 1 ).toString())
                 }
             );
-            console.log('response ' , response );
         } catch (err) {
             console.log("error: ", err);
         }
