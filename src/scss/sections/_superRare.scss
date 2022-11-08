@@ -25,14 +25,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
 
-    .cardButton{
-      justify-content: center;
-      align-items: center;
 
-      align-items: center;
-      justify-content: center;
-
-      .card {
+    .card {
         .card-image {
           img {
             width: 20rem;
@@ -48,34 +42,48 @@
         }
       }
 
-      .button {
 
-        display:inline-block;
-        font-size: 15px;
-        color: var(--accent-color1);
-        background-color: var(--background);
-        padding: 0.5rem 1rem;
-        font-weight: bold;
-        border-radius: 2rem;
-        border: solid 2px transparent;
-        background-image: linear-gradient(
-                        rgba(255, 255, 255, 0),
-                        rgba(255, 255, 255, 0)
-        ),
 
-        linear-gradient(101deg, var(--pink), var(--orange));
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-        box-shadow: 2px 1000px 1px var(--background) inset;
-        cursor: pointer;
-        transition: 0.5s ease-in-out;
-        &:hover {
-          box-shadow: none;
+    .button {
+
+          display: table;
+          margin: 0 auto;
+
+
+          font-size: 15px;
+          color: var(--accent-color1);
+          background-color: var(--background);
+          padding: 0.5rem 1rem;
+          font-weight: bold;
+          border-radius: 2rem;
+          border: solid 2px transparent;
+          background-image: linear-gradient(
+                          rgba(255, 255, 255, 0),
+                          rgba(255, 255, 255, 0)
+          ),
+
+          linear-gradient(101deg, var(--pink), var(--orange));
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          box-shadow: 2px 1000px 1px var(--background) inset;
+          cursor: pointer;
+          transition: 0.5s ease-in-out;
+          &:hover {
+            box-shadow: none;
+          }
         }
+
+    .advs{
+      color: var(--accent-color1);
+      // font-size: 2.4rem;
+      font-size: 1rem;
+      text-align: left;
+      display: table;
+      width: 100%;
+      .col {
+        display: table-cell;
       }
     }
-
-
 
 
   }

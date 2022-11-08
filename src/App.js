@@ -12,7 +12,7 @@ import {
 import { useEffect, useState } from "react";
 import scrollreveal from "scrollreveal";
 import NftList from "./components/NftList";
-import Benefits from "./components/Benefits";
+import EnterTheClub from "./components/EnterTheClub";
 
 export const Screans = {
   Landing: "Landing",
@@ -76,7 +76,7 @@ function App() {
                </div>;
       case Screans.QR:
         return <div>
-          { isConnected ? <Benefits accounts={accounts} setAccounts={setAccounts} isConnected ={isConnected}   /> : <div>  <br/> <br/> <h3 style={{color : 'white'}}> You need to connect your wallet to enter the club </h3> </div>}
+          { isConnected ? <EnterTheClub accounts={accounts} setAccounts={setAccounts} isConnected ={isConnected}   /> : <div>  <br/> <br/> <h3 style={{color : 'white'}}> You need to connect your wallet to enter the club </h3> </div>}
         </div>;
       default:
         return <div></div>;

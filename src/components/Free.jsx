@@ -15,9 +15,9 @@ const Free = () => {
           <div className="image">
             <img src={icon} alt="icon" />
           </div>
-          <h2 className="title">Free NFT for early birds</h2>
+          <h2 className="title">Free NFT for early minters</h2>
           <p className="description">
-            Sign up today and you'll get a free NFT when we launch
+            Mint an NFT and take your chance of getting an air drop of two gold memberships
           </p>
         </div>
       </div>

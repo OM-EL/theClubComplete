@@ -10,7 +10,6 @@ import {Screans} from "../App";
 
 const Navbar = ({screen , setScreend,accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
   const [navState, setNavState] = useState(false);
-  const [walletAddress, setWalletAddress] = useState("");
   const connectAccount = async () => {
     if(isConnected) {
       setIsConnected(false);
@@ -28,7 +27,7 @@ const Navbar = ({screen , setScreend,accounts, setAccounts, changeTheme, current
 
   function tabsOnScreen()
   {
-    if(screen == Screans.Landing) {
+    if(screen === Screans.Landing) {
       return <ul className="links">
               <li>
                 <a href="#freebies" onClick={() => setScreend(Screans.QR)}>
@@ -53,7 +52,7 @@ const Navbar = ({screen , setScreend,accounts, setAccounts, changeTheme, current
            </ul>
     }
 
-    if(screen == Screans.MyNfts || screen == Screans.QR )
+    if(screen === Screans.MyNfts || screen === Screans.QR )
     {
      return <ul className="links">
        <li>

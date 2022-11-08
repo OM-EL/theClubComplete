@@ -9,8 +9,7 @@ const Home = () => {
           <p className="sub-title">Launching Soon</p>
           <h1 className="title"> Clubing like you have never experienced  </h1>
           <p className="description">
-            Don't miss out on the release of our new NFT. Sign up below to
-            receive updates when we go live.
+            Don't miss out on the release of our new NFT. mint one of the 3 NFT's and experience a new way of clubing.
           </p>
           <button href="#super-rare" >Mint one of the NFT below </button>
         </div>

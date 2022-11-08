@@ -1,7 +1,6 @@
 import super1 from "./assets/super1.png";
 import super2 from "./assets/super2.png";
 import super3 from "./assets/super3.png";
-import super4 from "./assets/super4.png";
 import release2 from "./assets/release2.png";
 
 export const freeNFTData = [
@@ -26,10 +25,10 @@ export const freeNFTData = [
 
 export const superRareData = [
   {
-    image: super1,
+    image: super3,
     series: "The club Series",
-    title: "Gold",
-    price: 999,
+    title: "Bronze",
+    price: 69,
     time: 1,
   },
   {
@@ -40,12 +39,14 @@ export const superRareData = [
     time: 1,
   },
   {
-    image: super3,
+    image: super1,
     series: "The club Series",
-    title: "Bronze",
-    price: 69,
+    title: "Gold",
+    price: 999,
     time: 1,
-  }
+  },
+
+
 ];
 
 export const footerLinks = [
@@ -66,3 +67,44 @@ export const footerLinks = [
     data: ["Twitter", "Instagram"],
   },
 ];
+
+
+export const advantagesList = [
+  {
+    title: "Gold",
+    data: ["Everything in Silver plus " , "Access to the club for holder and 5 friends ", "2 Drink on the house every month ", "shout out from the DJ "],
+  },
+  {
+    title: "Silver",
+    data: ["Everything in Bronze plus ", "Access to the club for holder and 2 friend ", "1 Drink on the house every Month" , "Early notifications of special events", "10% off when booking a table" ],
+  },
+  {
+    title: "Bronze",
+    data: ["Access to the club for holder and 1 friend ", "Birthday drink on the house " ],
+  }
+];
+
+
+export const nftToAdvantes = [
+  {
+    title: "1",
+    data: ["drink"],
+  },
+  {
+    title: "2",
+    data: [],
+  },
+  {
+    title: "3",
+    data: [],
+  },
+  {
+    title: "4",
+    data: [],
+  },
+  {
+    title: "5",
+    data: [],
+  },
+];
+
