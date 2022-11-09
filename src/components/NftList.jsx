@@ -29,7 +29,6 @@ function NftList({accounts , setAccounts , isConnected }) {
 
     const getNFTList = async () => {
         let nfts = await alchemy.nft.getNftsForOwner(accounts[0] , {contractAddresses : ["0x7f22d25dC66756D5Eeedc2695EB42F58203e7cA5"]}  );
-        console.log(nfts);
         return nfts;
     };
 
@@ -58,10 +57,8 @@ function NftList({accounts , setAccounts , isConnected }) {
 
     useEffect(() => {
         getNFTList().then((response) => {
-
             nfts = response.ownedNfts;
             setIsNFTLoaded(true);
-
         });
     }, [isConnected , accounts])
 

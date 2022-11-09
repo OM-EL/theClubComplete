@@ -8,20 +8,25 @@ import {Screans} from "../App";
 
 
 
-const Navbar = ({screen , setScreend,accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
+const Navbar = ({ logout , login , getAccounts , screen , setScreend,accounts, setAccounts, changeTheme, currentTheme, isConnected, setIsConnected }) => {
   const [navState, setNavState] = useState(false);
   const connectAccount = async () => {
+      console.log(accounts);
     if(isConnected) {
+      await logout();
       setIsConnected(false);
       setAccounts([]);
       return;
     }
     if(window.ethereum) {
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      setIsConnected(true);
-      setAccounts(accounts);
+        await login();
+        const account = await getAccounts();
+        let accountsList = [];
+        accountsList.push(account);
+        setAccounts(accountsList);
+        setIsConnected(true);
+
+
     }
   }
 
